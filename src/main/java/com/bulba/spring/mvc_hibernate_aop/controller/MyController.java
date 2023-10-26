@@ -16,6 +16,7 @@ public class MyController {
     private EmployeeDAO employeeDAO;
 
 
+
     @RequestMapping("/")
     public String showAllEmployees(Model model){
 
@@ -24,4 +25,14 @@ public class MyController {
 
         return "all-employees";
     }
+
+    @RequestMapping("/employee")
+    public String showNoShowEmployees(Model model){
+
+        List<Employee> allEmployees= employeeDAO.getAllEmployees();
+        model.addAttribute("allEmps", allEmployees);
+
+        return "all-employees-ekekekek";
+    }
+
 }
